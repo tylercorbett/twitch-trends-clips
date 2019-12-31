@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import './Clips.scss';
 
 const Clips = ({ clips }) => {
+  console.log(clips)
   const clipItems = clips.map(c => {
     return <Clip />
   });

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getFortniteClips } from '../../../services/clipsService';
+import Clips from '../../clips/Clips';
 
 const ClipsContainer = () => {
   const [clips, setClips] = useState([]);
@@ -8,12 +9,13 @@ const ClipsContainer = () => {
     getFortniteClips()
       .then(data => setClips(data));
   }, []);
-  console.log(clips);
-  if (clips.length === 0) return <h2>Loading...</h2>
 
+
+  if (clips.length === 0) return <h2>Loading...</h2>
+  console.log(clips);
   return (
-    <div className="clips-container">
-      <h1>Container</h1>
+    <div>
+      <Clips clips={clips.data} />
     </div>
   );
 };

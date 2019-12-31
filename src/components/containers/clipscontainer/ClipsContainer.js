@@ -12,7 +12,6 @@ const ClipsContainer = () => {
 
 
   if (clips.length === 0) return <h2>Loading...</h2>
-  console.log(clips);
   return (
     <div>
       <Clips clips={clips.data} />

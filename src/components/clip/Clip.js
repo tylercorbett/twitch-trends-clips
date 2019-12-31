@@ -6,7 +6,16 @@ const Clip = ({ vidUrl, downloadUrl }) => {
   return (
     <li className="Clip">
       <h1>Clip</h1>
-      <button>Download</button>
+      {/* <iframe
+      autoPlay="false"
+    src={vidUrl}
+    height="360"
+    width="640"
+    frameborder="0"
+    scrolling="no"
+    allowfullscreen="true">
+</iframe> */}
+      <a href={downloadUrl}>Download</a>
     </li>
   );
 };

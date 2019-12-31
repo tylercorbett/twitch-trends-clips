@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { getFortniteClips } from '../../../services/clipsService';
 
 const ClipsContainer = () => {
-  const [clips, updateClips] = useState([]);
+  const [clips, setClips] = useState([]);
 
   useEffect(() => {
-    const clipsData = getFortniteClips();
+    getFortniteClips()
+      .then(data => setClips(data));
   }, []);
+  console.log(clips);
+  if (clips.length === 0) return <h2>Loading...</h2>
 
   return (
     <div className="clips-container">

@@ -17,5 +17,5 @@ export const getFortniteClips = async () => {
     }
   });
   const json = await response.json();
-  return response;
+  return json;
 };

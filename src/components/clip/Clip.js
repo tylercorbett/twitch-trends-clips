@@ -2,13 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Clip.scss'; 
 
-// https://clips-media-assets2.twitch.tv/26111712528-offset-31782.mp4
-
 const Clip = ({ vidUrl, downloadUrl }) => {
   return (
     <li className="Clip">
       <div className="vid-container">
-        <iframe
+        {/* <iframe
         title={vidUrl}
         autoPlay={false}
         src={vidUrl}
@@ -17,8 +15,8 @@ const Clip = ({ vidUrl, downloadUrl }) => {
         allowFullScreen={true}
         preload="metadata"
         >
-        </iframe>
-        {/* <div className="vid-placeholder"/> */}
+        </iframe> */}
+        <div className="vid-placeholder"/>
       </div>
       
       <a href={downloadUrl} className="download">Download</a>

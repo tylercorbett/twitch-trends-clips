@@ -6,7 +6,7 @@ const ClipsContainer = () => {
   const [clips, setClips] = useState([]);
 
   useEffect(() => {
-    getPUBGClips()
+    getFortniteClips()
       .then(data => setClips(data));
   }, []);
 

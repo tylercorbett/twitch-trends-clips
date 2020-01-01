@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { getFortniteClips } from '../../../services/clipsService';
+import { getFortniteClips, getPUBGClips } from '../../../services/clipsService';
 import Clips from '../../clips/Clips';
 
 const ClipsContainer = () => {
   const [clips, setClips] = useState([]);
 
   useEffect(() => {
-    getFortniteClips()
+    getPUBGClips()
       .then(data => setClips(data));
   }, []);
 

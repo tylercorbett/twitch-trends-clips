@@ -6,9 +6,9 @@ import { getDownloadUrl } from '../../services/clipsService';
 
 const Clips = ({ clips }) => {
   const clipItems = clips.map((clip, i) => {
-    const { embed_url, thumbnail_url } = clip;
+    const { embed_url, url, thumbnail_url } = clip;
     const downloadUrl = getDownloadUrl(thumbnail_url);
-    
+    if (downloadUrl === 'Cannot download clip') return null;
     return <Clip key={i} vidUrl={embed_url} downloadUrl={downloadUrl}/>
   });
 

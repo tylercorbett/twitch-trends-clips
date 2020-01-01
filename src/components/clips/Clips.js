@@ -17,7 +17,7 @@ const Clips = ({ clips, setClips }) => {
     if (downloadUrl === 'Cannot download clip') {
       return null;
     }
-    return <Clip onDeleteClick={handleDeleteClick} key={i} vidUrl={embed_url} downloadUrl1={downloadUrl.url1} downloadUrl2={downloadUrl.url2}/>
+    return <Clip onDeleteClick={handleDeleteClick} key={embed_url} vidUrl={embed_url} downloadUrl1={downloadUrl.url1} downloadUrl2={downloadUrl.url2}/>
   });
 
   return <ul className="Clips">{clipItems}</ul>;

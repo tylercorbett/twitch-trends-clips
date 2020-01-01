@@ -2,6 +2,7 @@ const BASE_CLIPS_URL = 'https://api.twitch.tv/helix/clips/?game_id=';
 const fortniteId = 33214;
 const pubgId = 493057;
 const makeDownloadUrl = id => `https://clips-media-assets2.twitch.tv/AT-cm%${id}.mp4`;
+const makeAltDownloadUrl = id => `https://clips-media-assets2.twitch.tv/${id}.mp4`;
 const makeClipsUrl = gameId => BASE_CLIPS_URL + gameId;
 
 export const getDownloadUrl = thumbnailUrl => {
@@ -22,8 +23,9 @@ export const getDownloadUrl = thumbnailUrl => {
   else {
     code = code.substring(38, 49);
   }
-  const url = makeDownloadUrl(code);
-  return url;
+  const url1 = makeDownloadUrl(code);
+  const url2 = makeAltDownloadUrl(code);
+  return { url1, url2 };
 };
 
 export const getFortniteClips = async () => {

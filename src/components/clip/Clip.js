@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Clip.scss'; 
 
-const Clip = ({ vidUrl, downloadUrl }) => {
+const Clip = ({ vidUrl, downloadUrl1, downloadUrl2 }) => {
   return (
     <li className="Clip">
       <div className="vid-container">
@@ -18,15 +18,18 @@ const Clip = ({ vidUrl, downloadUrl }) => {
         </iframe>
         {/* <div className="vid-placeholder"/> */}
       </div>
-      
-      <a href={downloadUrl} className="download">Download</a>
+      <span className="download-container">
+        <a href={downloadUrl1} className="download">Direct Download</a>
+        <a href={downloadUrl2} className="download">Alt Download</a>
+      </span>
     </li>
   );
 };
 
 Clip.propTypes = {
   vidUrl: PropTypes.string.isRequired,
-  downloadUrl: PropTypes.string.isRequired,
+  downloadUrl1: PropTypes.string.isRequired,
+  downloadUrl2: PropTypes.string.isRequired,
 };
 
 export default Clip;

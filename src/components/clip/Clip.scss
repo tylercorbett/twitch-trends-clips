@@ -16,21 +16,26 @@
     }
   }
   
-
-  .download {
-    text-decoration: none;
-    border: 2px purple solid;
-    border-radius: .3rem;
-    padding: .4rem;
-    color: purple;
-    background: transparent;
-    transition: all .2s ease-in-out;
-    margin: .2rem 0;
-    font-weight: bold;
-
-    &:hover {
-      background: purple;
-      color: white;
+  .download-container {
+    display: flex;
+    justify-content: space-around;
+    width: 20rem;
+    
+    .download {
+      text-decoration: none;
+      border: 2px purple solid;
+      border-radius: .3rem;
+      padding: .4rem;
+      color: purple;
+      background: transparent;
+      transition: all .2s ease-in-out;
+      margin: .2rem 0;
+      font-weight: bold;
+  
+      &:hover {
+        background: purple;
+        color: white;
+      }
     }
   }
 }

@@ -4,7 +4,6 @@
   align-items: center;
   list-style-type: none;
   margin: .4rem;
-  
 
 
   .vid-container {
@@ -27,6 +26,7 @@
     background: transparent;
     transition: all .2s ease-in-out;
     margin: .2rem 0;
+    font-weight: bold;
 
     &:hover {
       background: purple;

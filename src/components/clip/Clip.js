@@ -8,7 +8,7 @@ const Clip = ({ vidUrl, downloadUrl }) => {
   return (
     <li className="Clip">
       <div className="vid-container">
-        <iframe
+        {/* <iframe
         title={vidUrl}
         autoPlay={false}
         src={vidUrl}
@@ -17,8 +17,8 @@ const Clip = ({ vidUrl, downloadUrl }) => {
         allowFullScreen={true}
         preload="metadata"
         >
-        </iframe>
-        {/* <div className="vid-placeholder"/> */}
+        </iframe> */}
+        <div className="vid-placeholder"/>
       </div>
       
       <a href={downloadUrl} className="download">Download</a>

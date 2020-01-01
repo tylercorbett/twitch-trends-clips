@@ -1,10 +1,28 @@
 .Clip {
+  position: relative;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   list-style-type: none;
   margin: .4rem;
 
+  .close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    height: 2.7rem;
+    width: 100%;
+    font-size: 1.5rem;
+    transition: all ease-in-out .2s;
+
+    &:hover {
+      cursor: pointer;
+      background: crimson;
+      color: white;
+      border: none;
+    }
+  }
 
   .vid-container {
     margin: .5rem;
@@ -20,7 +38,7 @@
     display: flex;
     justify-content: space-around;
     width: 20rem;
-    
+
     .download {
       text-decoration: none;
       border: 2px purple solid;

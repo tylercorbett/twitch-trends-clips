@@ -7,14 +7,15 @@ const ClipsContainer = () => {
 
   useEffect(() => {
     getFortniteClips()
-      .then(data => setClips(data));
+      .then(clips => setClips(clips.data));
   }, []);
+
 
 
   if (clips.length === 0) return <h2>Loading...</h2>
   return (
     <div>
-      <Clips clips={clips.data} />
+      <Clips clips={clips} setClips={setClips}/>
     </div>
   );
 };

@@ -7,8 +7,8 @@ import './Clip.scss';
 const Clip = ({ vidUrl, downloadUrl }) => {
   return (
     <li className="Clip">
-      <h1>Clip</h1>
-      <iframe
+      <div className="vid-container">
+        <iframe
         title={vidUrl}
         autoPlay={false}
         src={vidUrl}
@@ -17,8 +17,11 @@ const Clip = ({ vidUrl, downloadUrl }) => {
         allowFullScreen={true}
         preload="metadata"
         >
-      </iframe>
-      <a href={downloadUrl}>Download</a>
+        </iframe>
+        {/* <div className="vid-placeholder"/> */}
+      </div>
+      
+      <a href={downloadUrl} className="download">Download</a>
     </li>
   );
 };

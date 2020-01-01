@@ -1,3 +1,36 @@
 .Clip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  margin: .4rem;
   
+
+
+  .vid-container {
+    margin: .5rem;
+
+    .vid-placeholder {
+      width: 640px;
+      height: 360px;
+      background-color: coral;
+    }
+  }
+  
+
+  .download {
+    text-decoration: none;
+    border: 2px purple solid;
+    border-radius: .3rem;
+    padding: .4rem;
+    color: purple;
+    background: transparent;
+    transition: all .2s ease-in-out;
+    margin: .2rem 0;
+
+    &:hover {
+      background: purple;
+      color: white;
+    }
+  }
 }

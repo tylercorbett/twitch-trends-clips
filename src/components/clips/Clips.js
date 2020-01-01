@@ -12,7 +12,7 @@ const Clips = ({ clips }) => {
     return <Clip key={i} vidUrl={embed_url} downloadUrl={downloadUrl}/>
   });
 
-  return <ul>{clipItems}</ul>;
+  return <ul className="Clips">{clipItems}</ul>;
 };
 
 Clips.propTypes = {

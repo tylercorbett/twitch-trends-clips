@@ -1,0 +1,82 @@
+.Controls {
+  position: relative;
+  margin: 0 auto;
+  margin-top: -4rem;
+  margin-bottom: 2rem;
+  width: 47rem;
+  height: 20rem;
+  background: white;
+  border-radius: .4rem;
+  padding: .6rem;
+  box-shadow: 0 0 2rem .05rem gray;
+
+  h4 {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #6C757D;
+    margin-bottom: 3rem;
+  }
+
+  h5 {
+    margin-bottom: .5rem;
+    color: #6C757D;
+    text-align: center;
+  }
+
+  .games {
+    position: absolute;
+    left: 3rem;
+    width: 15rem;
+
+    .games-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: .4rem;
+  
+      button {
+        font-size: 1rem;
+        
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .clip-count {
+    width: 15rem;
+    position: absolute;
+    right: 3rem;
+
+    input {
+      margin: 0 auto;
+      display: block;
+      font-size: 1.4rem;
+      color: #6C757D;
+    }
+  }
+
+  .load {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: purple;
+    border: 2px solid purple;
+    border-radius: .2rem;
+    width: 20rem;
+    height: 3rem;
+    letter-spacing: .05rem;
+    transition: .2s ease-in-out all;
+    background: transparent;
+
+    &:hover {
+      cursor: pointer;
+      color: white;
+      background: purple;
+
+    }
+  }
+}

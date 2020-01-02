@@ -1,6 +1,6 @@
 const makeDownloadUrl = id => `https://clips-media-assets2.twitch.tv/AT-cm%${id}.mp4`;
 const makeAltDownloadUrl = id => `https://clips-media-assets2.twitch.tv/${id}.mp4`;
-const makeClipUrl = (gameId, numberOfClips, todayDate) => `https://api.twitch.tv/helix/clips/?started_at=${todayDate}&?first=${numberOfClips}&game_id=${gameId}`;
+const makeClipUrl = (gameId, numberOfClips, date) => `https://api.twitch.tv/helix/clips/?started_at=${date}&?first=${numberOfClips}&game_id=${gameId}`;
 
 export const gameIdDictionary = {
   Fortnite: 33214,
@@ -14,9 +14,12 @@ export const gameIdDictionary = {
 };
 
 export const getClips = async (game, numberOfClips) => {
-  const todayDate = new Date().toISOString();
+  let date = new Date();
+  const pastDate = date.getDate() - 7;
+  date.setDate(pastDate);
+
   const gameId = gameIdDictionary[game];
-  const url = makeClipUrl(gameId, numberOfClips, todayDate);
+  const url = makeClipUrl(gameId, numberOfClips, date.toISOString());
   const response = await fetch(url, {
     method: 'GET',
     mode: 'cors',

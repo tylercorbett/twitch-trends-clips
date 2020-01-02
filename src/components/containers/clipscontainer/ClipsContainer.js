@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getClips, fortniteId } from '../../../services/clipsService';
+import { getClips } from '../../../services/clipsService';
 import Clips from '../../clips/Clips';
 import PropTypes from 'prop-types';
 import { PacmanLoader } from "react-spinners";

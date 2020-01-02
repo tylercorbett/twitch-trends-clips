@@ -10,6 +10,15 @@
   padding: .6rem;
   box-shadow: 0 0 2rem .05rem gray;
 
+  @media only screen and (max-width: 415px) {
+    width: 20rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -.4rem;
+  }
+
   h4 {
     text-align: center;
     font-size: 1.4rem;
@@ -27,6 +36,10 @@
     position: absolute;
     left: 3rem;
     width: 15rem;
+
+    @media only screen and (max-width: 415px) {
+      position: static;
+    }
 
     .game-title {
       margin-bottom: .7rem;
@@ -58,6 +71,11 @@
     width: 15rem;
     position: absolute;
     right: 3rem;
+
+    @media only screen and (max-width: 415px) {
+      position: static;
+      margin-top: 3rem;
+    }
 
     input {
       margin: 0 auto;

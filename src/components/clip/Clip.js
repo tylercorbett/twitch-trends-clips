@@ -11,7 +11,7 @@ const Clip = ({ vidUrl, downloadUrl1, downloadUrl2, onDeleteClick }) => {
   };
 
   const isMobile = window.mobilecheck();
-  
+
   return (
     <li className="Clip">
       <div className="vid-container">

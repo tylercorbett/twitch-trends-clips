@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { getClips, fortniteId } from '../../../services/clipsService';
 import Clips from '../../clips/Clips';
 import PropTypes from 'prop-types';
+import { PacmanLoader } from "react-spinners";
 
 const ClipsContainer = ({ setIsFormSubmitted, isFormSubmitted, activeGame, numberOfClips }) => {
   const [clips, setClips] = useState([]);
 
-  // By default load 25 Fortnite clips
+  // By default load 20 Fortnite clips
   useEffect(() => {
-    getClips('Fortnite', 25)
+    getClips('Fortnite', 20)
       .then(clips => setClips(clips.data));
   }, []);
 
@@ -19,7 +20,7 @@ const ClipsContainer = ({ setIsFormSubmitted, isFormSubmitted, activeGame, numbe
     setIsFormSubmitted(false);
   }
 
-  if (clips.length === 0) return <h2>Loading...</h2>
+  if (clips.length === 0) return <div style={{ display: 'flex', justifyContent: 'center', margin: '0 auto', height: '14rem' }}><PacmanLoader color="purple" size={75}/></div> 
   return (
     <div>
       <Clips clips={clips} setClips={setClips}/>

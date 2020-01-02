@@ -43,8 +43,9 @@ table {
 	border-spacing: 0;
 }
 * {
-  font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 .App {
 	background: #F5F8FA;
+	overflow-x: hidden;
 }

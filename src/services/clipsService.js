@@ -1,9 +1,33 @@
-const BASE_CLIPS_URL = 'https://api.twitch.tv/helix/clips/?game_id=';
-const fortniteId = 33214;
-const pubgId = 493057;
 const makeDownloadUrl = id => `https://clips-media-assets2.twitch.tv/AT-cm%${id}.mp4`;
 const makeAltDownloadUrl = id => `https://clips-media-assets2.twitch.tv/${id}.mp4`;
-const makeClipsUrl = gameId => BASE_CLIPS_URL + gameId;
+const makeClipUrl = (gameId, numberOfClips) => `https://api.twitch.tv/helix/clips/?first=${numberOfClips}&game_id=${gameId}`;
+
+export const gameIdDictionary = {
+  Fortnite: 33214,
+  PUBG: 493057,
+  LoL: 21779,
+  GTAV: 32982,
+  Rainbow6: 460630,
+  Dota: 29595,
+  CSGO: 32399,
+  Overwatch: 488552,
+};
+
+export const getClips = async (game, numberOfClips) => {
+  const gameId = gameIdDictionary[game];
+  const url = makeClipUrl(gameId, numberOfClips);
+  const response = await fetch(url, {
+    method: 'GET',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+      'Client-ID': process.env.REACT_APP_CLIENT_ID,
+    }
+  });
+  const json = await response.json();
+  
+  return json;
+};
 
 export const getDownloadUrl = thumbnailUrl => {
   let code = thumbnailUrl;
@@ -26,36 +50,4 @@ export const getDownloadUrl = thumbnailUrl => {
   const url1 = makeDownloadUrl(code);
   const url2 = makeAltDownloadUrl(code);
   return { url1, url2 };
-};
-
-export const getFortniteClips = async () => {
-  const fortniteUrl = makeClipsUrl(fortniteId);
-
-  const response = await fetch(fortniteUrl, {
-    method: 'GET',
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json',
-      'Client-ID': process.env.REACT_APP_CLIENT_ID,
-    }
-  });
-  const json = await response.json();
-  
-  return json;
-};
-
-export const getPUBGClips = async () => {
-  const pubgUrl = makeClipsUrl(pubgId);
-
-  const response = await fetch(pubgUrl, {
-    method: 'GET',
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json',
-      'Client-ID': process.env.REACT_APP_CLIENT_ID,
-    }
-  });
-  const json = await response.json();
-  
-  return json;
 };

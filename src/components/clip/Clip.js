@@ -8,7 +8,7 @@ const Clip = ({ vidUrl, downloadUrl1, downloadUrl2, onDeleteClick }) => {
     <li className="Clip">
       <div className="vid-container">
         <button onClick={onDeleteClick} className="close"><Trash/></button>
-        <iframe
+        {/* <iframe
         title={vidUrl}
         autoPlay={false}
         src={vidUrl}
@@ -17,8 +17,9 @@ const Clip = ({ vidUrl, downloadUrl1, downloadUrl2, onDeleteClick }) => {
         allowFullScreen={true}
         preload="metadata"
         >
-        </iframe>
-        {/* <div className="vid-placeholder"/> */}
+        </iframe> */}
+        {vidUrl}
+        <div className="vid-placeholder"/>
       </div>
       <span className="download-container">
         <a href={downloadUrl1} className="download">Direct Download</a>

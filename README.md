@@ -51,3 +51,9 @@ itself into Hootsuite automatically. It can schedule itself, create a caption, a
 doing something that's pretty repetitive. 
 
 
+#### Tech used:
+
+* Twitch's API
+* ReactJS
+* SCSS
+* Netlify for continuous deployment and hosting
